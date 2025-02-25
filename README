@@ -1,0 +1,25 @@
+This project is a deep learning-based image classification system that identifies whether an image contains a cat or a dog and determines its breed using a Convolutional Neural Network (CNN). Additionally, a Natural Language Processing (NLP) model is integrated to process textual data written by user and writes if it mentions animal breed correctly.
+
+Classifies images of cats and dogs into 37 different breeds based on the Oxford-IIIT Pet Dataset
+Uses a pre-trained NLP model (en_core_web_sm) for text analysis
+Employs CNN for image classification (cat_dog_classifier.h5)
+Object detection support via VOC dataset annotations
+
+The project utilizes the following libraries:
+    Deep Learning & ML: TensorFlow, scikit-learn, numpy
+    Computer Vision: OpenCV (cv2), matplotlib
+    Natural Language Processing (NLP): spaCy (en_core_web_sm)
+    Data Processing: os, xml.etree.ElementTree
+    Fuzzy Matching: thefuzz
+    
+Install Dependencies
+pip install tensorflow numpy opencv-python matplotlib spacy thefuzz scikit-learn
+python -m spacy download en_core_web_sm
+
+Run the Model:
+python3 pipeline.py
+
+Train new model:
+python3 create_model.py
+
+model is saved as cat_dog_classifier.h5

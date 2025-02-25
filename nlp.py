@@ -3,7 +3,7 @@ import spacy
 from code.breeds_list import breeds
 from thefuzz import process  # Fuzzy matching for mistakes correction
 
-!pip install https://huggingface.co/spacy/en_core_web_sm/resolve/main/en_core_web_sm-any-py3-none-any.whl
+# !pip install https://huggingface.co/spacy/en_core_web_sm/resolve/main/en_core_web_sm-any-py3-none-any.whl
 
 
 # model spaCy

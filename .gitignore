@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Jupyter Notebook specific
+.ipynb_checkpoints/
+*.ipynb-checkpoints
+
+# Editor config files (e.g., Emacs, Vim)
+*.swp
+*.bak
+*~
+
+# Logs and temporary files
+*.log
+*.tmp

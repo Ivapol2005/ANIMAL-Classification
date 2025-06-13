@@ -1,3 +1,4 @@
+"""
 import testAI
 from testAI import preprocess_image, visualize_classification, model
 import os
@@ -6,16 +7,13 @@ from tkinter import Tk
 from tkinter.filedialog import askopenfilenames
 from breeds_list import *
 
-# Приховуємо головне вікно Tk
 Tk().withdraw()
 
-# Вибір файлів через діалог
 image_files = askopenfilenames(
     title="Виберіть зображення для класифікації",
     filetypes=[("Image files", "*.png *.jpg *.jpeg")]
 )
 
-# Опрацьовуємо кожне зображення
 for image_path in image_files:
     processed_image = preprocess_image(image_path)
 
@@ -23,7 +21,6 @@ for image_path in image_files:
         input_image = np.expand_dims(processed_image, axis=0)
         prediction_breed, prediction_animal = model.predict(input_image)
 
-        # Top-2 породи
         top2_indices = np.argsort(prediction_breed[0])[-2:][::-1]
         top1_idx, top2_idx = top2_indices
         top1_conf = prediction_breed[0][top1_idx]
@@ -42,3 +39,4 @@ for image_path in image_files:
             # print(f"Predicted breed: {breed1} (Confidence: {top1_conf:.2f})")
     else:
         print(f"Skipped: {os.path.basename(image_path)}")
+"""

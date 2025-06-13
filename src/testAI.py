@@ -3,9 +3,27 @@ import numpy as np
 import cv2
 import os
 import matplotlib.pyplot as plt
-from src.breeds_list import breeds, cat_breeds, dog_breeds
 
-model = tf.keras.models.load_model("cat_dog_classifier.h5")
+from .breeds_list import breeds, cat_breeds, dog_breeds
+
+model_path = os.path.join(os.path.dirname(__file__), '../cat_dog_classifier.h5')
+
+try:
+    model = tf.keras.models.load_model(model_path)
+    print(f"Model loaded successfully from: {model_path}")
+    print(f"Type of loaded model: {type(model)}")
+    if isinstance(model, tf.keras.Model):
+        print("Model is a Keras Model object. OK.")
+    else:
+        print("WARNING: Model is NOT a Keras Model object after loading.")
+
+except Exception as e:
+        print(f"ERROR: Failed to load model from {model_path}. Please check the path and file integrity.")
+        print(f"Error details: {e}")
+        model = None
+        import sys
+        sys.exit(1)
+
 
 IMG_SIZE = (128, 128)
 
@@ -31,7 +49,7 @@ def visualize_classification(image_path, predicted_class, confidence, predicted_
     h, w, _ = image.shape
 
     class_name = breeds.get(predicted_class, "Unknown")
-    animal_type = "Cat" if predicted_animal == 0 else "Dog"
+    animal_type = predicted_animal
 
     cv2.rectangle(image, (5, 5), (w - 5, h - 5), (255, 0, 0), 2)
     cv2.putText(image, f"{animal_type}, {class_name} ({confidence:.2f})",

@@ -38,6 +38,9 @@ breeds = {
     37: "Yorkshire_Terrier"
 }
 
+# cat_breeds = {1, 6, 7, 8, 10, 12, 21, 24, 27, 28, 33, 34}
+# dog_breeds = {2, 3, 4, 5, 9, 11, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 25, 26, 29, 30, 31, 32, 35, 36, 37}
+
 cat_breeds = {
     1: "Abyssinian",
     6: "Bengal",

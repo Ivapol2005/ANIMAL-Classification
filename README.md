@@ -120,4 +120,4 @@ To perform a quick test classification on an image, you can use a simple Python 
     ```bash
     python run_example.py
     ```
-    ![Example of model useage](Figure 1.png)
+    ![Example of model useage](Figure_1.png)
